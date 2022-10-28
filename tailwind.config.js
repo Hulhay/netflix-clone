@@ -9,7 +9,8 @@ module.exports = {
         'lato': ['Lato']
       },
       colors: {
-        'chinese-black': '#171717'
+        'chinese-black': '#171717',
+        'eerie-black': '#1A1A1A'
       }
     },
   },

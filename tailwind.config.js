@@ -10,7 +10,8 @@ module.exports = {
       },
       colors: {
         'chinese-black': '#171717',
-        'eerie-black': '#1A1A1A'
+        'eerie-black': '#1A1A1A',
+        'black-olive': '#3b3a3a'
       }
     },
   },

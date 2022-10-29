@@ -1,12 +1,14 @@
 import { useState } from "react"
+import BottomSheetMovieDetail from "./BottomSheetMovieDetail"
 import BottomSheetWatchingItem from "./BottomSheetWatchingItem"
 
 const WatchingItem = ({ imgUrl }) => {
     const [isShowAction, setIsShowAction] = useState(false)
+    const [isShowDetail, setIsShowDetail] = useState(false)
 
     return (
         <div className="h-56 w-32">
-            <div style={{ backgroundImage: `url(${imgUrl})` }} className="h-44 flex justify-center items-center">
+            <div style={{ backgroundImage: `url(${imgUrl})` }} className="h-44 flex justify-center items-center bg-cover">
                 <button>
                     <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="32.5" cy="32.5" r="31.5" fill="black" fillOpacity="0.6" stroke="white" strokeWidth="2" />
@@ -15,7 +17,7 @@ const WatchingItem = ({ imgUrl }) => {
                 </button>
             </div>
             <div className="h-12 bg-eerie-black flex items-center justify-between pl-3 pr-4 border-t-2 border-red-600">
-                <button>
+                <button onClick={() => setIsShowDetail(true)}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="11" stroke="white" strokeWidth="2" />
                         <rect x="10.4349" y="5.21737" width="3.13043" height="3.13043" fill="white" />
@@ -30,6 +32,7 @@ const WatchingItem = ({ imgUrl }) => {
                     </svg>
                 </button>
             </div>
+            <BottomSheetMovieDetail isShow={isShowDetail} setIsShow={setIsShowDetail} />
             <BottomSheetWatchingItem isShow={isShowAction} setIsShow={setIsShowAction} />
         </div >
     )

@@ -6,7 +6,7 @@ import { SlDislike, SlLike } from 'react-icons/sl'
 const BottomSheetWatchingItem = ({ isShow, setIsShow }) => {
 
     return (
-        <div className={`bg-eerie-black text-white fixed bottom-0 left-0 w-full rounded-t-xl p-3 ${isShow ? '' : 'hidden'}`}>
+        <div className={`bg-eerie-black text-white fixed bottom-0 left-0 w-full rounded-t-xl p-3 ${isShow ? 'transition duration-300' : 'transition translate-y-full duration-300'}`}>
             <div className='flex justify-between'>
                 <p className='font-semibold text-lg'>The Rain</p>
                 <button
@@ -20,7 +20,7 @@ const BottomSheetWatchingItem = ({ isShow, setIsShow }) => {
                 <ul>
                     <li className='flex items-center py-2'>
                         <AiOutlineInfoCircle className='text-xl' />
-                        <p className='pl-4'>Episode & Information</p>
+                        <p className='pl-4'>Information</p>
                     </li>
                     <li className='flex items-center py-2'>
                         <HiDownload className='text-xl' />

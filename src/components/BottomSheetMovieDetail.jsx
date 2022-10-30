@@ -2,7 +2,6 @@ import { IoMdClose, IoMdPlay } from 'react-icons/io'
 import { HiDownload } from 'react-icons/hi'
 import { MdNavigateNext } from 'react-icons/md'
 import { AiOutlineInfoCircle, AiOutlineShareAlt, AiOutlinePlus } from 'react-icons/ai'
-import { useState } from 'react'
 
 const BottomSheetMovieDetail = ({ isShow, setIsShow }) => {
 

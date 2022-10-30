@@ -1,4 +1,5 @@
 import { useState } from "react"
+import OutsideClickHandler from "react-outside-click-handler"
 import BottomSheetMovieDetail from "./BottomSheetMovieDetail"
 import BottomSheetWatchingItem from "./BottomSheetWatchingItem"
 
@@ -32,8 +33,12 @@ const WatchingItem = ({ imgUrl }) => {
                     </svg>
                 </button>
             </div>
-            <BottomSheetMovieDetail isShow={isShowDetail} setIsShow={setIsShowDetail} />
-            <BottomSheetWatchingItem isShow={isShowAction} setIsShow={setIsShowAction} />
+            <OutsideClickHandler onOutsideClick={() => setIsShowDetail(false)}>
+                <BottomSheetMovieDetail isShow={isShowDetail} setIsShow={setIsShowDetail} />
+            </OutsideClickHandler>
+            <OutsideClickHandler onOutsideClick={() => setIsShowAction(false)}>
+                <BottomSheetWatchingItem isShow={isShowAction} setIsShow={setIsShowAction} />
+            </OutsideClickHandler>
         </div >
     )
 }

@@ -1,9 +1,9 @@
-import WatchingItem from './components/WatchingItem';
+import EmptyPageDownload from './pages/EmptyPageDownload';
 
 function App() {
   return (
     <div>
-      <WatchingItem imgUrl={'https://picsum.photos/200/300'} />
+      <EmptyPageDownload />
     </div>
   );
 }

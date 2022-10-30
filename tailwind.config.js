@@ -11,6 +11,7 @@ module.exports = {
         'eerie-black': '#1A1A1A',
         'black-olive': '#3b3a3a',
         quartz: '#4a4848',
+        'raisin-black': '#202020',
       },
     },
   },

@@ -1,4 +1,4 @@
-import WatchingItem from "./components/WatchingItem";
+import WatchingItem from './components/WatchingItem';
 
 function App() {
   return (

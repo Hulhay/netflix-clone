@@ -33,11 +33,11 @@ const MovieBanner = () => {
             ))}
           </ul>
         </div>
-        <div
-          className="flex justify-around w-2/3 pb-5"
-          onClick={() => setIsMyList(!isMyList)}
-        >
-          <div className="text-white flex flex-col items-center">
+        <div className="flex justify-around w-2/3 pb-5">
+          <div
+            className="text-white flex flex-col items-center"
+            onClick={() => setIsMyList(!isMyList)}
+          >
             {movieData.isMyList ? (
               <AiOutlineCheck className="text-2xl" />
             ) : (

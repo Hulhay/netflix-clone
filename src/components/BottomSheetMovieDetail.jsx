@@ -19,7 +19,7 @@ const BottomSheetMovieDetail = ({ isShow, setIsShow }) => {
   };
 
   return (
-    <div className={`bottom-sheet ${isShow ? '' : 'translate-y-full'}`}>
+    <div className={`bottom-sheet ${isShow ? '' : 'translate-y-full'} z-10`}>
       <div className="flex">
         <img
           className="pr-3 h-32"

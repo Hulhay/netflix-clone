@@ -22,7 +22,7 @@ const MovieBanner = () => {
       style={{ backgroundImage: `url(${movieData.imgUrl})` }}
       className="h-[450px] w-full bg-cover flex items-end justify-center"
     >
-      <div className="flex flex-col justify-end items-center bg-gradient-to-t from-black to-transparent h-[450px]">
+      <div className="flex flex-col justify-end items-center bg-gradient-to-t from-black to-transparent h-96">
         <div className="font-bold text-3xl text-white text-center">
           {movieData.title}
         </div>

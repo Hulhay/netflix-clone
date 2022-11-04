@@ -1,39 +1,32 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  const [navIcon, setNavIcon] = useState('home');
+const Navbar = ({ page }) => {
+  const [navIcon, setNavIcon] = useState(page);
 
   return (
     <div className="bg-chinese-black w-full h-14 absolute bottom-0">
       <div className="flex justify-evenly items-center">
-        <button
-          className="h-14 w-6"
-          onClick={() => {
-            setNavIcon('home');
-          }}
-        >
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 57 49"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M29.4047 0.899316L28.1984 2.83718e-05L27 0.909915L-6.91414e-06 21.4099L2.41883 24.5957L7.79042 20.5173L9.71481 46.6497L9.85128 48.5028H11.7094H44.2094H45.9437L46.1893 46.7859L49.8575 21.135L54.5141 24.6063L56.9047 21.3993L29.4047 0.899316ZM46.2061 18.4131L28.2204 5.00559L11.5889 17.6333L13.5675 44.5028H42.4751L46.2061 18.4131Z"
-              fill="white"
-              opacity={navIcon === 'home' ? '1' : '0.5'}
-            />
-          </svg>
-        </button>
-        <button
-          className="h-10 w-6"
-          onClick={() => {
-            setNavIcon('search');
-          }}
-        >
+        <Link to={'/'}>
+          <button className="h-14 w-6">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 57 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M29.4047 0.899316L28.1984 2.83718e-05L27 0.909915L-6.91414e-06 21.4099L2.41883 24.5957L7.79042 20.5173L9.71481 46.6497L9.85128 48.5028H11.7094H44.2094H45.9437L46.1893 46.7859L49.8575 21.135L54.5141 24.6063L56.9047 21.3993L29.4047 0.899316ZM46.2061 18.4131L28.2204 5.00559L11.5889 17.6333L13.5675 44.5028H42.4751L46.2061 18.4131Z"
+                fill="white"
+                opacity={navIcon === 'home' ? '1' : '0.5'}
+              />
+            </svg>
+          </button>
+        </Link>
+        <button className="h-10 w-6">
           <svg
             width="100%"
             height="100%"
@@ -50,12 +43,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <button
-          className="h-10 w-6"
-          onClick={() => {
-            setNavIcon('comingSoon');
-          }}
-        >
+        <button className="h-10 w-6">
           <svg
             width="100%"
             height="100%"
@@ -86,40 +74,32 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <button
-          className="h-10 w-6"
-          onClick={() => {
-            setNavIcon('download');
-          }}
-        >
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 44 54"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 0V43M22 43L8.5 32.5M22 43L35 32.5"
-              stroke="white"
-              strokeWidth="5"
-              opacity={navIcon === 'download' ? '1' : '0.5'}
-            />
-            <rect
-              y="49"
-              width="44"
-              height="5"
-              fill="white"
-              opacity={navIcon === 'download' ? '1' : '0.5'}
-            />
-          </svg>
-        </button>
-        <button
-          className="h-10 w-6"
-          onClick={() => {
-            setNavIcon('more');
-          }}
-        >
+        <Link to={'/download'}>
+          <button className="h-10 w-6">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 44 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 0V43M22 43L8.5 32.5M22 43L35 32.5"
+                stroke="white"
+                strokeWidth="5"
+                opacity={navIcon === 'download' ? '1' : '0.5'}
+              />
+              <rect
+                y="49"
+                width="44"
+                height="5"
+                fill="white"
+                opacity={navIcon === 'download' ? '1' : '0.5'}
+              />
+            </svg>
+          </button>
+        </Link>
+        <button className="h-10 w-6">
           <svg
             width="100%"
             height="100%"

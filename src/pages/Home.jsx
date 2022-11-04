@@ -8,7 +8,7 @@ const Home = () => {
     <div className="bg-black h-screen">
       <Toolbar />
       <MovieBanner />
-      <Navbar />
+      <Navbar page="home" />
     </div>
   );
 };

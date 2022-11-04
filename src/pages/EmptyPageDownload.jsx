@@ -13,7 +13,7 @@ const EmptyPageDownload = () => {
       <button className="bg-white rounded-md">
         <p className="py-3 px-6">Find Something to Download</p>
       </button>
-      <Navbar />
+      <Navbar page="download" />
     </div>
   );
 };

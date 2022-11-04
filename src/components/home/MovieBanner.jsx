@@ -6,7 +6,7 @@ import {
 import { IoMdPlay } from 'react-icons/io';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useState } from 'react';
-import BottomSheetMovieDetail from './BottomSheetMovieDetail';
+import BottomSheetMovieDetail from '../BottomSheetMovieDetail';
 
 const MovieBanner = () => {
   const [isShowDetail, setIsShowDetail] = useState(false);
@@ -29,7 +29,7 @@ const MovieBanner = () => {
         <div className="w-5/6">
           <ul className="flex text-white justify-evenly py-5 w-full">
             {movieData.tag.map((item) => (
-              <li>{item}</li>
+              <li key={Math.random()}>{item}</li>
             ))}
           </ul>
         </div>

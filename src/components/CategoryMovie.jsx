@@ -87,7 +87,10 @@ const CategoryMovie = ({ isShow, setIsShow }) => {
     >
       <ul className="text-center pt-12 pb-24 overflow-y-auto w-full">
         {genres.map((genre) => (
-          <li className="py-[10px] text-xl text-white font-semibold">
+          <li
+            key={genre.id}
+            className="py-[10px] text-xl text-white font-semibold"
+          >
             {genre.name}
           </li>
         ))}

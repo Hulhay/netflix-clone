@@ -9,5 +9,9 @@ body {
 }
 
 .bottom-sheet {
-  @apply bg-eerie-black text-white fixed bottom-0 left-0 w-full rounded-t-xl p-3 transition duration-300;
+  @apply bg-eerie-black text-white fixed bottom-0 left-0 w-full rounded-t-xl p-3 transition duration-300 z-10;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  @apply hidden
 }

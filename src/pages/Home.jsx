@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
-    <div className="bg-black h-full pb-80">
+    <div className="bg-black h-screen pb-80 overflow-y-auto">
       <Toolbar />
       <MovieBanner />
       <ContinueWatching />

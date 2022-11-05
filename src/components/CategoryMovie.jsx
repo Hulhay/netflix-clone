@@ -81,11 +81,11 @@ const CategoryMovie = ({ isShow, setIsShow }) => {
   ];
   return (
     <div
-      className={`bg-black bg-opacity-95 z-20 h-screen w-full absolute top-0 text-white justify-center ${
+      className={`bg-black bg-opacity-95 z-20 h-screen w-full absolute top-0 text-white justify-center overflow-y-hidden ${
         isShow ? 'flex' : 'hidden'
       }`}
     >
-      <ul className="text-center pt-12 pb-24 overflow-y-auto w-full">
+      <ul className="text-center pt-12 pb-24 overflow-y-auto w-full scrollbar-hide">
         {genres.map((genre) => (
           <li
             key={genre.id}

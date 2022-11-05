@@ -1,10 +1,8 @@
 import Logo from './icon/Logo';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { useState } from 'react';
 import CategoryMovie from './CategoryMovie';
 
-const Toolbar = () => {
-  const [showCategory, setShowCategory] = useState(false);
+const Toolbar = ({ showCategory, setShowCategory }) => {
   return (
     <div className="flex items-start absolute w-full pt-5 bg-gradient-to-b from-black to-transparent h-52">
       <div className="flex w-full justify-evenly items-center">

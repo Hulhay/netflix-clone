@@ -23,10 +23,7 @@ const Toolbar = ({ showCategory, setShowCategory }) => {
           </li>
         </ul>
       </div>
-      <CategoryMovie
-        isShow={showCategory}
-        setIsShow={setShowCategory}
-      />
+      {showCategory && <CategoryMovie setIsShow={setShowCategory} />}
     </div>
   );
 };

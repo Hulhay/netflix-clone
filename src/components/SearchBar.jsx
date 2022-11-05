@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 
-const SearchBar = () => {
+const SearchBar = ({ setIsSearch }) => {
   const [search, setSearch] = useState('');
   return (
     <div className="p-4">
@@ -15,8 +15,14 @@ const SearchBar = () => {
             placeholder="Search for something"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onFocus={(e) => (e.target.placeholder = '')}
-            onBlur={(e) => (e.target.placeholder = 'Search for something')}
+            onFocus={(e) => {
+              e.target.placeholder = '';
+              setIsSearch(true);
+            }}
+            onBlur={(e) => {
+              e.target.placeholder = 'Search for something';
+              setIsSearch(false);
+            }}
           />
         </div>
         <button

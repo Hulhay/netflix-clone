@@ -1,4 +1,5 @@
 import { HiDownload } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const EmptyPageDownload = () => {
@@ -10,9 +11,11 @@ const EmptyPageDownload = () => {
       <p className="text-xl pt-8 pb-40 px-14 text-quartz text-center">
         Movies and TV shows that you download appear here.
       </p>
-      <button className="bg-white rounded-md">
-        <p className="py-3 px-6">Find Something to Download</p>
-      </button>
+      <Link to={'/search'}>
+        <button className="bg-white rounded-md">
+          <p className="py-3 px-6">Find Something to Download</p>
+        </button>
+      </Link>
       <Navbar page="download" />
     </div>
   );

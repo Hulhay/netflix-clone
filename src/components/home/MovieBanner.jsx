@@ -7,6 +7,7 @@ import { IoMdPlay } from 'react-icons/io';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useState } from 'react';
 import BottomSheetMovieDetail from '../BottomSheetMovieDetail';
+import { Link } from 'react-router-dom';
 
 const MovieBanner = () => {
   const [isShowDetail, setIsShowDetail] = useState(false);
@@ -45,12 +46,14 @@ const MovieBanner = () => {
             )}
             <p>My List</p>
           </div>
-          <div>
-            <div className="h-9 w-24 bg-white rounded-md flex items-center justify-center">
-              <IoMdPlay />
-              <p className="pl-3">Play</p>
-            </div>
-          </div>
+          <Link to={'/now-watching'}>
+            <button>
+              <div className="h-9 w-24 bg-white rounded-md flex items-center justify-center">
+                <IoMdPlay />
+                <p className="pl-3">Play</p>
+              </div>
+            </button>
+          </Link>
           <div
             className="text-white flex flex-col items-center"
             onClick={() => setIsShowDetail(true)}

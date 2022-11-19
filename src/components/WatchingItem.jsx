@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
+import { Link } from 'react-router-dom';
 import BottomSheetMovieDetail from './BottomSheetMovieDetail';
 import BottomSheetWatchingItem from './BottomSheetWatchingItem';
 import Information from './icon/Information';
@@ -16,9 +17,11 @@ const WatchingItem = ({ imgUrl }) => {
         style={{ backgroundImage: `url(${imgUrl})` }}
         className="h-44 flex justify-center items-center bg-cover rounded-t-md"
       >
-        <button>
-          <Play />
-        </button>
+        <Link to={'/now-watching'}>
+          <button>
+            <Play />
+          </button>
+        </Link>
       </div>
       <div className="h-12 bg-eerie-black flex items-center justify-between pl-3 pr-4 border-t-2 border-red-600 rounded-b-md">
         <button onClick={() => setIsShowDetail(true)}>

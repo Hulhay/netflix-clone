@@ -18,7 +18,7 @@ const Home = () => {
   const [showCategory, setshowCategory] = useState(false);
   return (
     <div
-      className={`bg-black pb-80 ${
+      className={`bg-black pb-20 ${
         showCategory ? 'h-screen overflow-y-hidden' : 'h-full'
       }`}
     >

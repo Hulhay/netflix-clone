@@ -11,7 +11,7 @@ const SearchBar = ({ setIsSearch }) => {
           <FiSearch className="text-white text-xl opacity-70 h-5 w-5 mr-3" />
           <input
             type="text"
-            className="w-72 outline-none bg-dark-charcoal text-white"
+            className="outline-none bg-dark-charcoal text-white"
             placeholder="Search for something"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -25,12 +25,11 @@ const SearchBar = ({ setIsSearch }) => {
             }}
           />
         </div>
-        <button
-          className={search ? '' : 'hidden'}
-          onClick={() => setSearch('')}
-        >
-          <IoMdClose className="flex justify-center items-center text-white text-xl opacity-70 h-5 w-5" />
-        </button>
+        {search && (
+          <button onClick={() => setSearch('')}>
+            <IoMdClose className="flex justify-center items-center text-white text-xl opacity-70 h-5 w-5" />
+          </button>
+        )}
       </div>
     </div>
   );

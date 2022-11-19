@@ -1,4 +1,4 @@
-const Video = ({ isClicked }) => {
+const NowWatching = ({ isClicked }) => {
   return (
     <div>
       <svg
@@ -34,4 +34,4 @@ const Video = ({ isClicked }) => {
   );
 };
 
-export default Video;
+export default NowWatching;

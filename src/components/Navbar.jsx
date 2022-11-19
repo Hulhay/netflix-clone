@@ -3,7 +3,7 @@ import Home from './icon/Home';
 import Search from './icon/Search';
 import Download from './icon/Download';
 import More from './icon/More';
-import Video from './icon/Video';
+import NowWatching from './icon/NowWatching';
 
 const Navbar = ({ page }) => {
   return (
@@ -19,17 +19,21 @@ const Navbar = ({ page }) => {
             <Search isClicked={page === 'search'} />
           </button>
         </Link>
-        <button className="h-10 w-6">
-          <Video isClicked={page === 'video'} />
-        </button>
+        <Link to={'/now-watching'}>
+          <button className="h-10 w-6">
+            <NowWatching isClicked={page === 'nowWatching'} />
+          </button>
+        </Link>
         <Link to={'/download'}>
           <button className="h-10 w-6">
             <Download isClicked={page === 'download'} />
           </button>
         </Link>
-        <button className="h-10 w-6">
-          <More isClicked={page === 'more'} />
-        </button>
+        <Link to={'/about'}>
+          <button className="h-10 w-6">
+            <More isClicked={page === 'more'} />
+          </button>
+        </Link>
       </div>
     </div>
   );

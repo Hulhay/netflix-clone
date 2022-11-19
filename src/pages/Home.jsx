@@ -17,7 +17,11 @@ const Home = () => {
   ];
   const [showCategory, setshowCategory] = useState(false);
   return (
-    <div className={`bg-black pb-20 ${showCategory ? 'h-screen' : 'h-full'}`}>
+    <div
+      className={`bg-black pb-80 ${
+        showCategory ? 'h-screen overflow-y-hidden' : 'h-full'
+      }`}
+    >
       <Toolbar
         showCategory={showCategory}
         setShowCategory={setshowCategory}

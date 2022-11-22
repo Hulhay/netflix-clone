@@ -6,15 +6,27 @@ import {
   AiOutlineShareAlt,
   AiOutlinePlus,
 } from 'react-icons/ai';
+import { useState, useEffect } from 'react';
+import { getMovieDetail } from '../api';
+import { getYear, getRating, getDuration } from '../shared/string_manipulator';
 
-const BottomSheetMovieDetail = ({ isShow, setIsShow }) => {
-  const movieInfo = {
+const BottomSheetMovieDetail = ({ isShow, setIsShow, movieID }) => {
+  const baseImgUrl = process.env.REACT_APP_BASEIMGURL;
+
+  const [movieDetail, setMovieDetail] = useState({});
+  useEffect(() => {
+    getMovieDetail(movieID).then((result) => {
+      setMovieDetail(result);
+    });
+  }, [movieID]);
+
+  const movieDetaildum = {
     imgUrl: 'https://picsum.photos/200/300',
     title: 'Spongebob Squarepants Holiday Special',
-    year: 2021,
-    rating: '13+',
-    duration: '1h 53m',
-    description:
+    release_date: 2021,
+    vote_average: '8.9',
+    runtime: '1h53m',
+    overview:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium porro tempore delectus, enim necessitatibus numquam sint vel sapiente exercitationem. Aliquam maiores ullam expedita repudiandae corrupti accusamus fugiat adipisci quae odit.',
   };
 
@@ -23,19 +35,35 @@ const BottomSheetMovieDetail = ({ isShow, setIsShow }) => {
       <div className="flex">
         <img
           className="pr-3 h-32"
-          src={movieInfo.imgUrl}
-          alt={movieInfo.title}
+          src={
+            movieDetail.id
+              ? `${baseImgUrl}${movieDetail.poster_path}`
+              : movieDetaildum.imgUrl
+          }
+          alt={movieDetail.id ? movieDetail.title : movieDetaildum.title}
         />
         <div>
           <div className="flex justify-between">
             <div className="w-full">
               <p className="font-semibold text-xl line-clamp-2">
-                {movieInfo.title}
+                {movieDetail.id ? movieDetail.title : movieDetaildum.title}
               </p>
               <ul className="flex w-3/5 justify-between text-quartz text-xs">
-                <li>{movieInfo.year}</li>
-                <li>{movieInfo.rating}</li>
-                <li>{movieInfo.duration}</li>
+                <li>
+                  {movieDetail.id
+                    ? getYear(movieDetail.release_date)
+                    : movieDetaildum.release_date}
+                </li>
+                <li>
+                  {movieDetail.id
+                    ? getRating(movieDetail.vote_average)
+                    : movieDetaildum.vote_average}
+                </li>
+                <li>
+                  {movieDetail.id
+                    ? getDuration(movieDetail.runtime)
+                    : movieDetaildum.runtime}
+                </li>
               </ul>
             </div>
             <button
@@ -46,7 +74,9 @@ const BottomSheetMovieDetail = ({ isShow, setIsShow }) => {
             </button>
           </div>
           <div>
-            <p className="text-xs line-clamp-4 pt-2">{movieInfo.description}</p>
+            <p className="text-xs line-clamp-4 pt-2">
+              {movieDetail.id ? movieDetail.overview : movieDetaildum.overview}
+            </p>
           </div>
         </div>
       </div>

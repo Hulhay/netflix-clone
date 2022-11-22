@@ -1,15 +1,30 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import OutsideClickHandler from 'react-outside-click-handler';
+import BottomSheetMovieDetail from './BottomSheetMovieDetail';
 
-const MovieCard = ({ imgUrl, alt }) => {
+const baseImgUrl = process.env.REACT_APP_BASEIMGURL;
+
+const MovieCard = ({ movie }) => {
+  const [isShowDetail, setIsShowDetail] = useState(false);
+
   return (
     <div className="w-32">
-      <Link to={'/now-watching'}>
-        <img
-          className="rounded-md"
-          src={imgUrl}
-          alt={alt}
+      <img
+        className="rounded-md"
+        src={`${baseImgUrl}${movie.poster_path}`}
+        alt={movie.title}
+        onClick={() => {
+          setIsShowDetail(true);
+        }}
+      />
+
+      <OutsideClickHandler onOutsideClick={() => setIsShowDetail(false)}>
+        <BottomSheetMovieDetail
+          isShow={isShowDetail}
+          setIsShow={setIsShowDetail}
+          movieID={movie.id}
         />
-      </Link>
+      </OutsideClickHandler>
     </div>
   );
 };

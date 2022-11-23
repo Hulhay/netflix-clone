@@ -1,84 +1,15 @@
 import { IoMdClose } from 'react-icons/io';
+import { useState, useEffect } from 'react';
+import { getGenreMovieList } from '../api';
 
 const CategoryMovie = ({ setIsShow }) => {
-  const genres = [
-    {
-      id: 28,
-      name: 'Action',
-    },
-    {
-      id: 12,
-      name: 'Adventure',
-    },
-    {
-      id: 16,
-      name: 'Animation',
-    },
-    {
-      id: 35,
-      name: 'Comedy',
-    },
-    {
-      id: 80,
-      name: 'Crime',
-    },
-    {
-      id: 99,
-      name: 'Documentary',
-    },
-    {
-      id: 18,
-      name: 'Drama',
-    },
-    {
-      id: 10751,
-      name: 'Family',
-    },
-    {
-      id: 14,
-      name: 'Fantasy',
-    },
-    {
-      id: 36,
-      name: 'History',
-    },
-    {
-      id: 27,
-      name: 'Horror',
-    },
-    {
-      id: 10402,
-      name: 'Music',
-    },
-    {
-      id: 9648,
-      name: 'Mystery',
-    },
-    {
-      id: 10749,
-      name: 'Romance',
-    },
-    {
-      id: 878,
-      name: 'Science Fiction',
-    },
-    {
-      id: 10770,
-      name: 'TV Movie',
-    },
-    {
-      id: 53,
-      name: 'Thriller',
-    },
-    {
-      id: 10752,
-      name: 'War',
-    },
-    {
-      id: 37,
-      name: 'Western',
-    },
-  ];
+  const [genres, setGenres] = useState([]);
+  useEffect(() => {
+    getGenreMovieList().then((result) => {
+      setGenres(result);
+    });
+  }, []);
+
   return (
     <div className="bg-black bg-opacity-95 z-20 h-screen w-full absolute top-0 text-white justify-center overflow-y-auto">
       <ul className="text-center pt-12 pb-24 overflow-y-auto w-full scrollbar-hide">

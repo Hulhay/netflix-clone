@@ -1,6 +1,7 @@
 import Logo from './icon/Logo';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import CategoryMovie from './CategoryMovie';
+import { getGenreMovieList } from '../api';
 
 const Toolbar = ({ showCategory, setShowCategory }) => {
   return (
@@ -15,7 +16,10 @@ const Toolbar = ({ showCategory, setShowCategory }) => {
           <li>
             <button
               className="flex items-center"
-              onClick={() => setShowCategory(true)}
+              onClick={() => {
+                setShowCategory(true);
+                getGenreMovieList();
+              }}
             >
               <p>Category</p>
               <IoMdArrowDropdown className="ml-1 text-2xl" />

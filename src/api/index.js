@@ -6,13 +6,13 @@ const key = process.env.REACT_APP_API_KEY;
 
 const getTrendingMovieList = async () => {
   const url = `${baseUrl}/trending/movie/week`;
-  const movie = await axios.get(`${url}`, {
+  const movies = await axios.get(`${url}`, {
     params: {
       api_key: key,
       page: getRandomPage(),
     },
   });
-  return movie.data.results;
+  return movies.data.results;
 };
 
 const getMovieDetail = async (id) => {
@@ -23,7 +23,16 @@ const getMovieDetail = async (id) => {
     },
   });
   return movie.data;
-  // console.log(movie.data);
 };
 
-export { getTrendingMovieList, getMovieDetail };
+const getGenreMovieList = async () => {
+  const url = `${baseUrl}/genre/movie/list`;
+  const genres = await axios.get(`${url}`, {
+    params: {
+      api_key: key,
+    },
+  });
+  return genres.data.genres;
+};
+
+export { getTrendingMovieList, getMovieDetail, getGenreMovieList };

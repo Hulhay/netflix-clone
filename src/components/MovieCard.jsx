@@ -8,9 +8,9 @@ const MovieCard = ({ movie }) => {
   const [isShowDetail, setIsShowDetail] = useState(false);
 
   return (
-    <div className="w-32">
+    <div className="w-32 h-48">
       <img
-        className="rounded-md"
+        className="rounded-md h-48 w-32"
         src={`${baseImgUrl}${movie.poster_path}`}
         alt={movie.title}
         onClick={() => {

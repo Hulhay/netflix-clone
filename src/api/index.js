@@ -35,4 +35,16 @@ const getGenreMovieList = async () => {
   return genres.data.genres;
 };
 
-export { getTrendingMovieList, getMovieDetail, getGenreMovieList };
+const searchMovie = async (keyword) => {
+  const url = `${baseUrl}/search/movie`;
+  const movies = await axios.get(`${url}`, {
+    params: {
+      api_key: key,
+      query: keyword,
+      include_adult: false,
+    },
+  });
+  return movies.data.results;
+};
+
+export { getTrendingMovieList, getMovieDetail, getGenreMovieList, searchMovie };

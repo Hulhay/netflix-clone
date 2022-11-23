@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
+import { searchMovie } from '../api';
 
-const SearchBar = ({ setIsSearch }) => {
+const SearchBar = ({ setIsSearch, setSearchResult }) => {
   const [search, setSearch] = useState('');
   return (
     <div className="p-4">
@@ -22,6 +23,14 @@ const SearchBar = ({ setIsSearch }) => {
             onBlur={(e) => {
               e.target.placeholder = 'Search for something';
               setIsSearch(false);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                searchMovie(search).then((result) => {
+                  setSearchResult(result);
+                });
+              }
             }}
           />
         </div>

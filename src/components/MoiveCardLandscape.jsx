@@ -1,18 +1,20 @@
 import { BsPlayCircle } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
 
-const MoiveCardLandscape = ({ isToDelete = false }) => {
-  const movieData = {
-    img: 'https://picsum.photos/200/300',
-    title: 'Spongebob Squarepants Holiday Special',
-  };
+const baseImgUrl = process.env.REACT_APP_BASEIMGURL;
+
+const MoiveCardLandscape = ({ isToDelete = false, movieData }) => {
+  // const movieData = {
+  //   img: 'https://picsum.photos/200/300',
+  //   title: 'Spongebob Squarepants Holiday Special',
+  // };
 
   return (
     <div className="h-20 bg-raisin-black flex justify-between items-center mb-[1px]">
       <div className="flex items-center h-full">
         <img
           className="h-20 w-32"
-          src={movieData.img}
+          src={`${baseImgUrl}${movieData.backdrop_path}`}
           alt={movieData.title}
         />
         <div className="ml-4 w-2/3">
